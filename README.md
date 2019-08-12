@@ -60,7 +60,7 @@ __* Ver0.0.1__ (201.8.12)
 * アニメーション設定 / Animation settings  
 　　　　　　　　　　　　　　　　...etc
                 
-## 7.著者 Autor  
+## 7.著者 Author  
 __zuhima__ => [github](https://github.com/zuhima), [twitter](https://twitter.com/hmjnzsm0922/)  
 　最近(2019/8~)プログラムの公開みたいなことを始めました。よかったらフォローしてください、よろしくお願いします。  
  Recentry, I started to publish my program.Please follow me.
