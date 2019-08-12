@@ -17,7 +17,7 @@
 [What's "_Thread handing mandala_"?](https://www.itomandala.com/%E7%B3%B8%E3%81%8B%E3%81%91%E6%9B%BC%E8%8D%BC%E7%BE%85%E3%81%A8%E3%81%AF/)
 
 ## 2.デモ　DEMO
-![](https://github.com/zuhima/ItokakeMandala/image/gif/mandara.gif)
+![](https://github.com/zuhima/ItokakeMandala/image/gif/mandala.gif)
 
 ## 3.使い方　Usage
 __0. 線の太さを決める / Set line thickness (Line size)__  
