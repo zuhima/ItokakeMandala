@@ -1,5 +1,4 @@
-# 糸掛け曼荼羅メーカー　
-### Thread Handing Mandala Maker
+# 糸掛け曼荼羅メーカー/Thread Handing Mandala Maker
 
 ~~(現在、編集中です...。)
 (Currently editing...)~~
