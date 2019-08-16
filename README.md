@@ -55,7 +55,7 @@ __3. Create!ボタンを押す / Push a _Create!_ button (Create!)__
 ## 5.バージョン情報 Version information  
 * __Ver0.0.2__ (2019.8.16)  
 　UI周りのタグを"p"を"div"に変更。GitHubのブランチテストも兼ねて。  
-　Change tag aroung UI from "p" to "div". Also serves aas branch test for GitHub.
+　Change tag aroung UI from "p" to "div". Also serves as branch test for GitHub.
 
 * __Ver0.0.1__ (2019.8.12)  
 　円形の一般的な曼荼羅の描画。線の太さの変更。素数パターンの変更。  
