@@ -1,4 +1,4 @@
-# 糸掛け曼荼羅メーカー　
+# test糸掛け曼荼羅メーカー　
 ### Thread Handing Mandala Maker
 
 ~~(現在、編集中です...。)
@@ -60,7 +60,7 @@ __* Ver0.0.1__ (2019.8.12)
 * 素数パターン以外の曼荼羅描画(花,鳥...) / Drawing mandara other than prime numbers(flower, bird...)  
 * アニメーション設定 / Animation settings  
 　　　　　　　　　　　　　　　　...etc
-                
+
 ## 7.著者 Author  
 __zuhima__ => [github](https://github.com/zuhima), [twitter](https://twitter.com/hmjnzsm0922/)  
 　最近(2019/8~)プログラムの公開みたいなことを始めました。よかったらフォローしてください、よろしくお願いします。  
@@ -73,4 +73,3 @@ MIT
 　ここまで読んでいただきありがとうございました。プログラムの公開をするのはこれが初めてで、ここで書く内容からMarkdownの記法まで細かく調べながら、
  このREADMEを書いています。読みにくいところや分かりにくいところがあったら申し訳ございません。また、無理のないペースでこのツールのバージョンアップを行ったり、
  別のツールを作成してみたりするつもりなので、よろしくお願いします。  
- 
