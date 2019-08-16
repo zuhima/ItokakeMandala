@@ -1,8 +1,8 @@
 # 糸掛け曼荼羅メーカー　
 ### Thread Handing Mandala Maker
 
-(現在、編集中です...。)
-(Currently editing...)
+~~(現在、編集中です...。)
+(Currently editing...)~~
 
 ※I'm not good at English...Please forgive my poor English.
 
