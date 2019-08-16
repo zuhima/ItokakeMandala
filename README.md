@@ -6,6 +6,10 @@
 
 ※I'm not good at English...Please forgive my poor English.
 
+## 追記 Postscript  
+　__2019.8.16__  
+バージョン情報にver0.0.2を追加。
+
 ## 1.概要 Overview
 　糸掛け曼荼羅というストリングアートがあるが、本プログラムではそれを画面上で作成することができる。  
  "Itokake Mandala" is a kind of string art.This program can draw it.
