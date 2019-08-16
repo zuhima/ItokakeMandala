@@ -6,6 +6,10 @@
 
 ※I'm not good at English...Please forgive my poor English.
 
+## 追記 Postscript  
+　__2019.8.16__  
+バージョン情報にver0.0.2を追加。
+
 ## 1.概要 Overview
 　糸掛け曼荼羅というストリングアートがあるが、本プログラムではそれを画面上で作成することができる。  
  "Itokake Mandala" is a kind of string art.This program can draw it.
@@ -49,9 +53,13 @@ __3. Create!ボタンを押す / Push a _Create!_ button (Create!)__
  This program is writed by _HTML_, _JavaScript_._jQuery_ and _D3.js_(both of CDN) are used for library.You need a communication environment.
 
 ## 5.バージョン情報 Version information  
-__* Ver0.0.1__ (2019.8.12)  
+* __Ver0.0.2__ (2019.8.16)  
+　UI周りのタグを"p"を"div"に変更。GitHubのブランチテストも兼ねて。  
+　Change tag aroung UI from "p" to "div". Also serves as branch test for GitHub.
+
+* __Ver0.0.1__ (2019.8.12)  
 　円形の一般的な曼荼羅の描画。線の太さの変更。素数パターンの変更。  
- Circular general mandala drawing.You can chenge the line thickness and prime number checkboxes.
+　Circular general mandala drawing.You can chenge the line thickness and prime number checkboxes.
 
 ## 6.今後の実装予定 Future implementation schedule  
 * 線の色付け(グラデーション、カスタム) / Line coloring(gradation,custom)  
@@ -60,7 +68,7 @@ __* Ver0.0.1__ (2019.8.12)
 * 素数パターン以外の曼荼羅描画(花,鳥...) / Drawing mandara other than prime numbers(flower, bird...)  
 * アニメーション設定 / Animation settings  
 　　　　　　　　　　　　　　　　...etc
-                
+
 ## 7.著者 Author  
 __zuhima__ => [github](https://github.com/zuhima), [twitter](https://twitter.com/hmjnzsm0922/)  
 　最近(2019/8~)プログラムの公開みたいなことを始めました。よかったらフォローしてください、よろしくお願いします。  
@@ -73,4 +81,3 @@ MIT
 　ここまで読んでいただきありがとうございました。プログラムの公開をするのはこれが初めてで、ここで書く内容からMarkdownの記法まで細かく調べながら、
  このREADMEを書いています。読みにくいところや分かりにくいところがあったら申し訳ございません。また、無理のないペースでこのツールのバージョンアップを行ったり、
  別のツールを作成してみたりするつもりなので、よろしくお願いします。  
- 
