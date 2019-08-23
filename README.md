@@ -53,7 +53,7 @@ __3. Create!ボタンを押す / Push a _Create!_ button (Create!)__
 
 ## 5.バージョン情報 Version information  
 * __Ver0.0.3__ (2019.8.24)  
-　チェックボックスを最初からチェック状態にしておく。
+　チェックボックスを最初からチェック状態にしておく。  
   Prime number checkboxes are checked from beginnig.
  
 * __Ver0.0.2__ (2019.8.16)  
