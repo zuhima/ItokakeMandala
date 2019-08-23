@@ -48,9 +48,6 @@ SOFTWARE. -->
       <div id="prime_number_selection_tag">
         Prime Number Selection: <a id="prime_number_selection"></a>
       </div>
-      <div id="prime_checkbox_all_button_tag">
-        <!-- 今後実装予定 -->
-      </div>
       <div id="create_button_tag">
         <input type="button" id="create_button" value="Create!" disabled/>
       </div>
@@ -93,6 +90,7 @@ SOFTWARE. -->
       if(!isNaN(val)){
         //数値が入力されたとき
         pinCount = Number(val);    //数値を代入
+          $("#create_button").prop("disabled", false);  //createボタンを有効化
       } else {
         //数値以外が入力されたとき
         d3.selectAll("#prime_checkbox").remove();    //チェックボックスを全部消す
@@ -120,6 +118,7 @@ SOFTWARE. -->
         .attr("type", "checkbox")
         .attr("name", "prime_checkbox")
         .attr("value", function(d){ return d; })
+        .attr("checked", true)
         .text(function(d){ return d; });
 
       //pinCountを変更したときにあぶれたチェックボックスを消す
@@ -153,8 +152,10 @@ SOFTWARE. -->
         //素数が選択された状態でcreateボタンを押したとき
         drawMandara(selectedPrimeNumberList, pinCount);   //曼荼羅を描画する
       }
-      $(this).prop("disabled", true);                     //createボタン無効化
+      //$(this).prop("disabled", true);                     //createボタン無効化
     });
+
+
 
 
 //********* 関数群 ***************
