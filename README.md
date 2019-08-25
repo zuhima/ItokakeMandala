@@ -24,7 +24,6 @@
 Ver0.1.0  
 <img src="https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/demo_ver0.1.0_basic.gif" width="500px">  
 
- 
 
 ## 3.使い方　Usage
 基本的な使い方は以下0.~3.の通り。  
