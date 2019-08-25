@@ -6,7 +6,7 @@
 ※I'm not good at English...Please forgive my poor English.
 
 ## 追記 Postscript  
-　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。
+　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。  
 　__2019.8.24__　バージョン情報にver0.0.3を追加。  
 　__2019.8.16__  バージョン情報にver0.0.2を追加。
 
@@ -66,7 +66,7 @@ __線の色を変える / Change color of lines(Color Type)__
  This program is writed by _HTML_, _JavaScript_._jQuery_ and _D3.js_(both of CDN) are used for library.You need a communication environment.
 
 ## 5.バージョン情報 Version information  
-* __Ver0.1.0__ (2019.8.25)
+* __Ver0.1.0__ (2019.8.25)  
   線の色を変えられるように変更。単色のみ。  
   The color of lines can be changed.Only monochromatic mode.
 
