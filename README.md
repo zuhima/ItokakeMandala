@@ -5,8 +5,11 @@
 
 ※I'm not good at English...Please forgive my poor English.
 
+## 本プログラムは[こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から！/This program can be used [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
+※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
+
 ## 追記 Postscript  
-　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。  
+　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。ブラウザ上で動かせるようにリンクを追加。  
 　__2019.8.24__　バージョン情報にver0.0.3を追加。  
 　__2019.8.16__　バージョン情報にver0.0.2を追加。
 
@@ -26,6 +29,10 @@ Ver0.1.0
 
 
 ## 3.使い方　Usage
+ファイルを落としてこなくても使えるようにしました => [こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から  
+You can use this program without downloading files. => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
+※リンクが切れていたら申し訳ありません。/Sorry if the link is broken...  
+
 基本的な使い方は以下0.~3.の通り。  
 Basic usage is as follows 0-3.
 
