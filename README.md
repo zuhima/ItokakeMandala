@@ -21,8 +21,10 @@
 [What's "_Thread handing mandala_"?](https://www.itomandala.com/%E7%B3%B8%E3%81%8B%E3%81%91%E6%9B%BC%E8%8D%BC%E7%BE%85%E3%81%A8%E3%81%AF/)
 
 ## 2.デモ　DEMO  
-Ver0.0.1  
-<img src="https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/mandala.gif" width="500px">
+Ver0.1.0  
+<img src="https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/demo_ver0.1.0_basic.gif" width="500px">  
+
+ 
 
 ## 3.使い方　Usage
 基本的な使い方は以下0.~3.の通り。  
