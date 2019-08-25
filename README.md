@@ -22,7 +22,7 @@
 
 ## 2.デモ　DEMO  
 Ver0.0.1  
-![](https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/mandala.gif)
+<img src="https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/mandala.gif" width="500px">
 
 ## 3.使い方　Usage
 基本的な使い方は以下0.~3.の通り。  
@@ -53,7 +53,7 @@ __3. Create!ボタンを押す / Push a _Create!_ button (Create!)__
 __線の色を変える / Change color of lines(Color Type)__  
 　Color Typeのラジオボタンで配色のモードを変えられます。
 * mono  
-　選択すると色を入力できるようになる。色を指定してcreateボタンを押すことで反映される。色の名前出ない文字列が入力された場合は黒色になる。
+　選択すると色を入力できるようになる。色を指定してcreateボタンを押すことで反映される。色の名前出ない文字列が入力された場合は黒色になる。  
  If you select _mono_ in radio buttons, you can input color name.After input color name, reflected by pressing the _create!_ button.Enter a non-color name to turn black.
 
 * gradation  
