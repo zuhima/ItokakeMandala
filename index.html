@@ -40,13 +40,23 @@ SOFTWARE. -->
     </div>
     <div id="ui">
       <div id="line_size_tag">
-        Line size: <input type="text" id="line_size" /> px
+        Line size: <input type="text" id="line_size" size="1" /> px
       </div>
       <div id="pincount_tag">
-        Pin Count (Over 3): <input type="text" id="pin_count" />
+        Pin Count (Over 3): <input type="text" id="pin_count" size="5" />
       </div>
       <div id="prime_number_selection_tag">
         Prime Number Selection: <a id="prime_number_selection"></a>
+      </div>
+      <div id="color_button_space">
+        Color Type:
+        <input type="radio" name="color_button" id="mono" value="mono" checked/>mono
+        <input type="radio" name="color_button" id="gradation" value="gradation" />gradation
+        <!-- <input type="radio" name="color_button" id="custom" />custom -->
+      </div>
+      <div id="color_input_space">
+        　=>Color(example:black, #000):
+        <input type="text" id="color_input" size="5"/>
       </div>
       <div id="create_button_tag">
         <input type="button" id="create_button" value="Create!" disabled/>
@@ -68,6 +78,7 @@ SOFTWARE. -->
                 .attr("height", height);   //描画範囲設定
     var pinCount;                //ピンの数
     var lineSize;                //線の太さ
+    var color = "black";
 
     //Line Sizeにデフォルトの線の太さを入力
     $("#line_size").val("1");
@@ -131,6 +142,7 @@ SOFTWARE. -->
     });
 
     //チェックボックスに何かしらの動きがあった時
+    //動的追加したときの処理
     $(document).on("click", "#prime_checkbox", function(){
       //console.log("pass");
       $("#create_button").prop("disabled", false);   //createボタンを有効化
@@ -150,17 +162,54 @@ SOFTWARE. -->
         return;
       } else {
         //素数が選択された状態でcreateボタンを押したとき
-        drawMandara(selectedPrimeNumberList, pinCount);   //曼荼羅を描画する
+        drawMandara(selectedPrimeNumberList, pinCount, color);   //曼荼羅を描画する
       }
       //$(this).prop("disabled", true);                     //createボタン無効化
     });
 
+    //ラジオボタンColorTypeに変化があった時
+    $("input[name='color_button']:radio").change(function(){
+      var val = $(this).val();
+      switch(val){
+        case "mono":
+          removeColorInputTag();
+          d3.select("#color_input_space")
+            .text("　=>Color(example:black, #000):")
+            .append("input")
+            .attr("type", "text")
+            .attr("id", "color_input")
+            .attr("size", "5")
+            .append("span")
+            .attr("id", "color_sample");
+        break;
+
+        case "gradation":
+          removeColorInputTag();
+          d3.select("#color_input_space").text("　=>Coming soon...");
+        break;
+
+        default:
+        return;
+      }
+    })
+
+    //色入力欄の変化を検出して動作
+    $(document).on("change", "#color_input", function(){
+      color = $(this).val();
+      //console.log(color);
+    })
 
 
 
 //********* 関数群 ***************
+    //色入力欄を消す
+    function removeColorInputTag(){
+      d3.select("#color_input_space").text("");
+      d3.select("#color_input").remove();
+    }
+
     //曼荼羅を描画する
-    function drawMandara(primeNumList, pinCount){
+    function drawMandara(primeNumList, pinCount, color){
       var degree = 360 / pinCount;                  //ピンの角度の間隔
       var radian = degree * Math.PI / 180;          //ラジアンに変換
       var pinPosX = [];
@@ -185,7 +234,7 @@ SOFTWARE. -->
           .enter()
           .append("circle")
           .attr("id", "mandara")
-          .attr("r", "3px")
+          .attr("r", "2px")
           .attr("cx", function(d){ return d[0]; })
           .attr("cy", function(d){ return d[1]; });
 
@@ -202,7 +251,7 @@ SOFTWARE. -->
               .attr("x2", pinPosXY[end][0])
               .attr("y2", pinPosXY[end][1])
               .attr("stroke-width", function(){ return lineSize + "px"; })
-              .attr("stroke", "black");
+              .attr("stroke", color);
           start = end;
           end = start + step;
           if(start >= pinPosXY.length) start -= pinPosXY.length;
