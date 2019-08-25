@@ -6,8 +6,9 @@
 ※I'm not good at English...Please forgive my poor English.
 
 ## 追記 Postscript  
+　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。  
 　__2019.8.24__　バージョン情報にver0.0.3を追加。  
-　__2019.8.16__  バージョン情報にver0.0.2を追加。 
+　__2019.8.16__　バージョン情報にver0.0.2を追加。
 
 ## 1.概要 Overview
 　糸掛け曼荼羅というストリングアートがあるが、本プログラムではそれを画面上で作成することができる。  
@@ -20,10 +21,14 @@
 [What's "_Thread handing mandala_"?](https://www.itomandala.com/%E7%B3%B8%E3%81%8B%E3%81%91%E6%9B%BC%E8%8D%BC%E7%BE%85%E3%81%A8%E3%81%AF/)
 
 ## 2.デモ　DEMO  
-Ver0.0.1  
-![](https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/mandala.gif)
+Ver0.1.0  
+<img src="https://raw.github.com/wiki/zuhima/ItokakeMandala/gif/demo_ver0.1.0_basic.gif" width="500px">  
+
 
 ## 3.使い方　Usage
+基本的な使い方は以下0.~3.の通り。  
+Basic usage is as follows 0-3.
+
 __0. 線の太さを決める / Set line thickness (Line size)__  
 　デフォルトでは1pxで描画される。ピンの数を多くするのであれば、より細い線で描画したほうがきれいにできる。太くしても雰囲気が変わるので試してみるとよい。  
  Default line thickness is 1px.If you increase the number of pins, the thinner the line, the better.  
@@ -46,16 +51,30 @@ __3. Create!ボタンを押す / Push a _Create!_ button (Create!)__
 (ピンの数や素数パターンを変更した際にCreate!ボタンが無効化されたままになっているときは、素数のチェックボックスをいじると有効化になります。)  
 (If the button remains disabled, touch the prime number checkbox.)
 
+__線の色を変える / Change color of lines(Color Type)__  
+　Color Typeのラジオボタンで配色のモードを変えられます。
+* mono  
+　選択すると色を入力できるようになる。色を指定してcreateボタンを押すことで反映される。色の名前出ない文字列が入力された場合は黒色になる。  
+ If you select _mono_ in radio buttons, you can input color name.After input color name, reflected by pressing the _create!_ button.Enter a non-color name to turn black.
+
+* gradation  
+　後日実装予定  
+　Coming soon.
+
 ## 4. 備考 Remarks
 　本プログラムは、HTML,JavaScriptで動いており、ライブラリとしてはjQuery, D3.js(いずれもCDN)を使用しています。
 通信環境があるところで使用してください。  
  This program is writed by _HTML_, _JavaScript_._jQuery_ and _D3.js_(both of CDN) are used for library.You need a communication environment.
 
 ## 5.バージョン情報 Version information  
+* __Ver0.1.0__ (2019.8.25)  
+  線の色を変えられるように変更。単色のみ。  
+  The color of lines can be changed.Only monochromatic mode.
+
 * __Ver0.0.3__ (2019.8.24)  
 　チェックボックスを最初からチェック状態にしておく。  
   Prime number checkboxes are checked from beginnig.
- 
+
 * __Ver0.0.2__ (2019.8.16)  
 　UI周りのタグを"p"を"div"に変更。GitHubのブランチテストも兼ねて。  
 　Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
