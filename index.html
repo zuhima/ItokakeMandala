@@ -21,13 +21,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. -->
 
 <!-- Author : zuhima (2019.8.12)-->
-<!-- Version 0.1.0 -->
+<!-- Version 0.1.1 -->
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>糸掛け曼荼羅メーカー Ver1</title>
+    <title>糸掛け曼荼羅メーカー</title>
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -79,6 +79,7 @@ SOFTWARE. -->
                 .attr("height", height);   //描画範囲設定
     var pinCount;                //ピンの数
     var lineSize;                //線の太さ
+    var colorMode = "mono";
     var color = "black";
 
     //Line Sizeにデフォルトの線の太さを入力
@@ -163,15 +164,24 @@ SOFTWARE. -->
         return;
       } else {
         //素数が選択された状態でcreateボタンを押したとき
-        drawMandara(selectedPrimeNumberList, pinCount, color);   //曼荼羅を描画する
+        switch(colorMode){
+          case "mono":
+            drawMandala(selectedPrimeNumberList, pinCount, color);    //曼荼羅を描画する
+          break;
+          case "gradation":
+            drawMandala_gradation(selectedPrimeNumberList, pinCount); //曼荼羅を描画する
+          break;
+          default:
+          return;
+        }
       }
       //$(this).prop("disabled", true);                     //createボタン無効化
     });
 
     //ラジオボタンColorTypeに変化があった時
     $("input[name='color_button']:radio").change(function(){
-      var val = $(this).val();
-      switch(val){
+      colorMode = $(this).val();
+      switch(colorMode){
         case "mono":
           removeColorInputTag();
           d3.select("#color_input_space")
@@ -203,16 +213,21 @@ SOFTWARE. -->
 
 
 //********* 関数群 ***************
+    //曼荼羅を描画する/グラデーションモード
+    function drawMandala_gradation(primeNumList, pinCount){
+      return;
+    }
+
     //色入力欄を消す
     function removeColorInputTag(){
       d3.select("#color_input_space").text("");
       d3.select("#color_input").remove();
     }
 
-    //曼荼羅を描画する
-    function drawMandara(primeNumList, pinCount, color){
-      var degree = 360 / pinCount;                  //ピンの角度の間隔
-      var radian = degree * Math.PI / 180;          //ラジアンに変換
+    //ピンの座標を計算する => ピンの座標は線の始点・終点座標になる
+    function calcPinsPos(pinCount){
+      var degree = 360 / pinCount;                 //ピンの角度間隔
+      var radian = degree * Math.PI / 180;         //ラジアンに変換
       var pinPosX = [];
       var pinPosY = [];
 
@@ -229,7 +244,11 @@ SOFTWARE. -->
         pinPosXY.push(pos);
       }
 
-      //ピンを配置
+      return pinPosXY;
+    }
+
+    //ピンを配置する
+    function putPins(pinPosXY){
       svg.selectAll("circle")
           .data(pinPosXY)
           .enter()
@@ -238,6 +257,13 @@ SOFTWARE. -->
           .attr("r", "2px")
           .attr("cx", function(d){ return d[0]; })
           .attr("cy", function(d){ return d[1]; });
+    }
+
+    //曼荼羅を描画する/単色モード
+    function drawMandala(primeNumList, pinCount, color){
+      var pinPosXY = calcPinsPos(pinCount);          //ピンの座標リスト
+
+      putPins(pinPosXY);       //ピンを配置する
 
       //線の描画
       for(var i = 0; i < primeNumList.length; i++){
