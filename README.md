@@ -29,8 +29,8 @@ Ver0.1.0
 
 
 ## 3.使い方　Usage
-ファイルを落としてこなくても使えるようにしました => [こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から  
-You can use this program without downloading files. => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
+__ファイルを落としてこなくても使えるようにしました__ => [こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から  
+__You can use this program without downloading files.__ => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken...  
 
 基本的な使い方は以下0.~3.の通り。  
