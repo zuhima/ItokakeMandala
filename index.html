@@ -36,18 +36,18 @@ SOFTWARE. -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
-    <div id="mandara_space">
+    <div id="mandala_space">
 
     </div>
     <div id="ui">
       <div id="line_size_tag">
-        Line size: <input type="text" id="line_size" size="1" /> px
+        Line size: <input type="text" id="line_size" size="3" /> px
       </div>
       <div id="pincount_tag">
         Pin Count (Over 3): <input type="text" id="pin_count" size="5" />
       </div>
       <div id="prime_number_selection_tag">
-        Prime Number Selection: <a id="prime_number_selection"></a>
+        Prime Num Select: <a id="prime_number_selection"></a>
       </div>
       <div id="color_button_space">
         Color Type:
@@ -74,7 +74,7 @@ SOFTWARE. -->
     var centerX = width / 2;     //描画範囲の中心x座標
     var centerY = height / 2;    //描画範囲の中心y座標
     var radius = 200;            //半径
-    var svg = d3.select("#mandara_space").append("svg")
+    var svg = d3.select("#mandala_space").append("svg")
                 .attr("width", width)
                 .attr("height", height);   //描画範囲設定
     var pinCount;                //ピンの数
@@ -152,7 +152,7 @@ SOFTWARE. -->
 
     //createボタンが押されたとき
     $("#create_button").on("click", function(){
-      d3.selectAll("#mandara").remove();             //既に描画されている曼荼羅を消す
+      d3.selectAll("#mandala").remove();             //既に描画されている曼荼羅を消す
       var selectedPrimeNumberList = [];              //選択された素数を格納するリスト
       $("#prime_checkbox:checked").each(function(){
         selectedPrimeNumberList.push($(this).val()); //チェックされている素数を取得
@@ -215,6 +215,33 @@ SOFTWARE. -->
 //********* 関数群 ***************
     //曼荼羅を描画する/グラデーションモード
     function drawMandala_gradation(primeNumList, pinCount){
+      var pinPosXY = calcPinsPos(pinCount);  //ピンの座標リスト
+      putPins(pinPosXY);                  //ピンを配置
+
+      //線の描画
+      var j = 0;
+      for(var i = 0; i < primeNumList.length; i++){
+        var step = Number(primeNumList[i]);
+        var start = 0;
+        var end = step;
+        do{
+          svg.append("line")
+              .attr("id", "mandala")
+              .attr("x1", pinPosXY[start][0])
+              .attr("y1", pinPosXY[start][1])
+              .attr("x2", pinPosXY[end][0])
+              .attr("y2", pinPosXY[end][1])
+              .attr("stroke-width", function(){ return lineSize + "px"; })
+              .attr("stroke", d3.hsl(((j + 1) % 360), 1, 0.5))
+              .attr("opacity", "0.8");
+          start = end;
+          end = start + step;
+          if(start >= pinPosXY.length) start -= pinPosXY.length;
+          if(end >= pinPosXY.length) end -= pinPosXY.length;
+        }while(start != 0);
+        j = j + 5;
+      }
+
       return;
     }
 
@@ -253,7 +280,7 @@ SOFTWARE. -->
           .data(pinPosXY)
           .enter()
           .append("circle")
-          .attr("id", "mandara")
+          .attr("id", "mandala")
           .attr("r", "2px")
           .attr("cx", function(d){ return d[0]; })
           .attr("cy", function(d){ return d[1]; });
@@ -272,7 +299,7 @@ SOFTWARE. -->
         var end = step;
         do{
           svg.append("line")
-              .attr("id", "mandara")
+              .attr("id", "mandala")
               .attr("x1", pinPosXY[start][0])
               .attr("y1", pinPosXY[start][1])
               .attr("x2", pinPosXY[end][0])
