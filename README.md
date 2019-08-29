@@ -66,7 +66,7 @@ __線の色を変える / Change color of lines(Color Type)__
  If you select _mono_ in radio buttons, you can input color name.After input color name, reflected by pressing the _create!_ button.Enter a non-color name to turn black.
 
 * gradation  
-　選択するとラジオボタンが表示される。どちらかのタイプを選択し_create!_ ボタンを押すことでグラデーションがかかった曼荼羅が描画される。  
+　選択するとラジオボタンが表示される。どちらかのタイプを選択しcreate!ボタンを押すことでグラデーションがかかった曼荼羅が描画される。  
 If you select _gradation_ in radio buttons, you can select two type by radio buttons that appear newly.After selecting _gradation type_ radio button, mandala is drawn a gradient mandala by pushing _create!_ button.
 
 ## 4. 備考 Remarks
