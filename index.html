@@ -56,7 +56,7 @@ SOFTWARE. -->
         <!-- <input type="radio" name="color_button" id="custom" />custom -->
       </div>
       <div id="color_input_space">
-        　=>Color(example:black, #000):
+        　=>Color(ex:black, #000):
         <input type="text" id="color_input" size="5"/>
       </div>
       <div id="create_button_tag">
@@ -84,6 +84,7 @@ SOFTWARE. -->
     var lineSize;                //線の太さ
     var colorMode = "mono";
     var color = "black";
+    var gradationType = "type1";
 
     //Line Sizeにデフォルトの線の太さを入力
     $("#line_size").val("1");
@@ -172,7 +173,7 @@ SOFTWARE. -->
             drawMandala(selectedPrimeNumberList, pinCount, color);    //曼荼羅を描画する
           break;
           case "gradation":
-            drawMandala_gradation(selectedPrimeNumberList, pinCount); //曼荼羅を描画する
+            drawMandala_gradation(selectedPrimeNumberList, pinCount, gradationType); //曼荼羅を描画する
           break;
           default:
           return;
@@ -188,7 +189,7 @@ SOFTWARE. -->
         case "mono":
           removeColorInputTag();
           d3.select("#color_input_space")
-            .text("　=>Color(example:black, #000):")
+            .text("　=>Color(ex:black, #000):")
             .append("input")
             .attr("type", "text")
             .attr("id", "color_input")
@@ -199,8 +200,9 @@ SOFTWARE. -->
 
         case "gradation":
           removeColorInputTag();
-          d3.select("#color_input_space").text("　=>Coming soon...");
-        break;
+          $("#color_input_space").append(
+            '　=>Gradation Type:<g id="color_input"><input type="radio" name="gradation_type" value="type1" checked/>type1<input type="radio" name="gradation_type" value="type2" />type2</g>'
+          );
 
         default:
         return;
@@ -213,20 +215,46 @@ SOFTWARE. -->
       //console.log(color);
     })
 
+    //GradationTypeラジオボタンの変化を検出して動作
+    $(document).on("change", "input[name='gradation_type']:radio", function(){
+      gradationType = $(this).val();
+    })
+
 
 
 //********* 関数群 ***************
     //曼荼羅を描画する/グラデーションモード
-    function drawMandala_gradation(primeNumList, pinCount){
+    function drawMandala_gradation(primeNumList, pinCount, type){
       var pinPosXY = calcPinsPos(pinCount);  //ピンの座標リスト
       putPins(pinPosXY);                  //ピンを配置
 
+      var max = primeNumList.length;
+      var colorScale1 = d3.scaleLinear()
+                          .domain([0, max-1/2])
+                          .range([0, 359]);
+      var colorScale2 = d3.scaleLinear()
+                          .domain([max/2, max])
+                          .range([359, 0]);
+
       //線の描画
-      var j = 0;
       for(var i = 0; i < primeNumList.length; i++){
         var step = Number(primeNumList[i]);
         var start = 0;
         var end = step;
+        var colorIndex;
+        if(type == "type1"){
+          if(i < max/2){
+            colorIndex = colorScale1(i);
+          } else {
+            colorIndex = colorScale2(i);
+          }
+        } else if(type == "type2"){
+          if(i < max/2){
+            colorIndex = colorScale2(i);
+          } else {
+            colorIndex = colorScale1(i);
+          }
+        }
         do{
           svg.append("line")
               .attr("id", "mandala")
@@ -235,14 +263,14 @@ SOFTWARE. -->
               .attr("x2", pinPosXY[end][0])
               .attr("y2", pinPosXY[end][1])
               .attr("stroke-width", function(){ return lineSize + "px"; })
-              .attr("stroke", d3.hsl(((j + 1) % 360), 1, 0.5))
+              .attr("stroke", d3.hsl((colorIndex % 360), 1, 0.5))
               .attr("opacity", "0.8");
           start = end;
           end = start + step;
           if(start >= pinPosXY.length) start -= pinPosXY.length;
           if(end >= pinPosXY.length) end -= pinPosXY.length;
         }while(start != 0);
-        j = j + 5;
+        //console.log(i + ":" + primeNumList[i] + ":" + colorIndex);
       }
 
       return;
