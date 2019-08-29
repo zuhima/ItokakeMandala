@@ -9,6 +9,7 @@
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
 
 ## 追記 Postscript  
+　__2019.8.30__　バージョン情報にver0.1.1を追加。使い方に追記。  
 　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。ブラウザ上で動かせるようにリンクを追加。  
 　__2019.8.24__　バージョン情報にver0.0.3を追加。  
 　__2019.8.16__　バージョン情報にver0.0.2を追加。
@@ -65,8 +66,8 @@ __線の色を変える / Change color of lines(Color Type)__
  If you select _mono_ in radio buttons, you can input color name.After input color name, reflected by pressing the _create!_ button.Enter a non-color name to turn black.
 
 * gradation  
-　後日実装予定  
-　Coming soon.
+　選択するとラジオボタンが表示される。どちらかのタイプを選択し_create!_ ボタンを押すことでグラデーションがかかった曼荼羅が描画される。  
+If you select _gradation_ in radio buttons, you can select two type by radio buttons that appear newly.After selecting _gradation type_ radio button, mandala is drawn a gradient mandala by pushing _create!_ button.
 
 ## 4. 備考 Remarks
 　本プログラムは、HTML,JavaScriptで動いており、ライブラリとしてはjQuery, D3.js(いずれもCDN)を使用しています。
@@ -74,17 +75,21 @@ __線の色を変える / Change color of lines(Color Type)__
  This program is writed by _HTML_, _JavaScript_._jQuery_ and _D3.js_(both of CDN) are used for library.You need a communication environment.
 
 ## 5.バージョン情報 Version information  
+* __Ver0.1.1__ (2019.8.30)  
+グラデーションモードを追加。(2モード)  
+The gradation mode is added.(2modes)　
+
 * __Ver0.1.0__ (2019.8.25)  
-  線の色を変えられるように変更。単色のみ。  
-  The color of lines can be changed.Only monochromatic mode.
+線の色を変えられるように変更。単色のみ。  
+The color of lines can be changed.Only monochromatic mode.
 
 * __Ver0.0.3__ (2019.8.24)  
-　チェックボックスを最初からチェック状態にしておく。  
-  Prime number checkboxes are checked from beginnig.
+チェックボックスを最初からチェック状態にしておく。  
+Prime number checkboxes are checked from beginnig.
 
 * __Ver0.0.2__ (2019.8.16)  
-　UI周りのタグを"p"を"div"に変更。GitHubのブランチテストも兼ねて。  
-　Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
+UI周りのタグを"p"を"div"に変更。GitHubのブランチテストも兼ねて。  
+Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
 
 * __Ver0.0.1__ (2019.8.12)  
 　円形の一般的な曼荼羅の描画。線の太さの変更。素数パターンの変更。  
