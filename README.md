@@ -9,6 +9,7 @@
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
 
 ## 追記 Postscript  
+　__2019.9.1__　バージョン情報にver0.1.2を追加。使い方に追記。備考に追記。  
 　__2019.8.30__　バージョン情報にver0.1.1を追加。使い方に追記。  
 　__2019.8.25__　バージョン情報にver0.1.0を追加。使い方に追記。ブラウザ上で動かせるようにリンクを追加。  
 　__2019.8.24__　バージョン情報にver0.0.3を追加。  
@@ -67,14 +68,24 @@ __線の色を変える / Change color of lines(Color Type)__
 
 * gradation  
 　選択するとラジオボタンが表示される。どちらかのタイプを選択しcreate!ボタンを押すことでグラデーションがかかった曼荼羅が描画される。  
-If you select _gradation_ in radio buttons, you can select two type by radio buttons that appear newly.After selecting _gradation type_ radio button, mandala is drawn a gradient mandala by pushing _create!_ button.
+If you select _gradation_ in radio buttons, you can select two type by radio buttons that appear newly.After selecting _gradation type_ radio button, mandala is drawn a gradient mandala by pushing _create!_ button.  
+
+* random  
+　選択してcreate!ボタンを押すことでランダムな配色の曼荼羅が描画される。  
+If you select _random_ and push _create_ button, random color mandala is drawn.
 
 ## 4. 備考 Remarks
-　本プログラムは、HTML,JavaScriptで動いており、ライブラリとしてはjQuery, D3.js(いずれもCDN)を使用しています。
+* 本プログラムは、HTML,JavaScriptで動いており、ライブラリとしてはjQuery, D3.js(いずれもCDN)を使用しています。
 通信環境があるところで使用してください。  
  This program is writed by _HTML_, _JavaScript_._jQuery_ and _D3.js_(both of CDN) are used for library.You need a communication environment.
 
+* ピンの数を多くするほど描画処理に時間がかかります。  
+The more pins you set, drawing process takes time.
+
 ## 5.バージョン情報 Version information  
+* __Ver0.1.2__ (2019.9.1)  
+ランダム配色モードを追加。プログラムの軽微な修正。
+
 * __Ver0.1.1__ (2019.8.30)  
 グラデーションモードを追加。(2モード)  
 The gradation mode is added.(2modes)　
@@ -96,7 +107,7 @@ Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
 　Circular general mandala drawing.You can chenge the line thickness and prime number checkboxes.
 
 ## 6.今後の実装予定 Future implementation schedule  
-* 線の色付け(グラデーション、カスタム) / Line coloring(gradation,custom)  
+* 線の色付け(~グラデーション、ランダム~、カスタム) / Line coloring(~gradation,random,~custom)  
 * UI周りの改良 / UI improvements  
 * 角型曼荼羅の実装 / Implementation of square mandala  
 * 素数パターン以外の曼荼羅描画(花,鳥...) / Drawing mandara other than prime numbers(flower, bird...)  

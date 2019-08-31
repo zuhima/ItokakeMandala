@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. -->
 
 <!-- Author : zuhima (2019.8.12)-->
-<!-- Version 0.1.1 -->
+<!-- Version 0.1.2 -->
 
 <!DOCTYPE html>
 <html>
@@ -53,6 +53,7 @@ SOFTWARE. -->
         Color Type:
         <input type="radio" name="color_button" id="mono" value="mono" checked/>mono
         <input type="radio" name="color_button" id="gradation" value="gradation" />gradation
+        <input type="radio" name="color_button" id="random" value="random"  />random
         <!-- <input type="radio" name="color_button" id="custom" />custom -->
       </div>
       <div id="color_input_space">
@@ -175,6 +176,9 @@ SOFTWARE. -->
           case "gradation":
             drawMandala_gradation(selectedPrimeNumberList, pinCount, gradationType); //曼荼羅を描画する
           break;
+          case "random":
+            drawMandala_random(selectedPrimeNumberList, pinCount);    //曼荼羅を描画する
+          break;
           default:
           return;
         }
@@ -204,6 +208,12 @@ SOFTWARE. -->
           $("#color_input_space").append(
             '　=>Gradation Type:<g id="color_input"><input type="radio" name="gradation_type" value="type1" checked/>type1<input type="radio" name="gradation_type" value="type2" />type2</g>'
           );
+        break;
+
+        case "random":
+          removeColorInputTag();
+          $("#color_input_space").append('　=>Random Mode...');
+        break;
 
         default:
         return;
@@ -224,6 +234,39 @@ SOFTWARE. -->
 
 
 //********* 関数群 ***************
+    //曼荼羅を描画する/ランダムモード
+    function drawMandala_random(primeNumList, pinCount){
+      var pinPosXY = calcPinsPos(pinCount); //ピンの座標リスト
+      putPins(pinPosXY);                    //ピンを配置
+
+      var r, g, b; //乱数を生成しrgb(r, g, b)に代入し色を決める
+
+      //線の描画
+      for(var i = 0; i < primeNumList.length; i++){
+        var step = Number(primeNumList[i]);
+        var start = 0;
+        var end = step;
+        r = Math.random() * 256;
+        g = Math.random() * 256;
+        b = Math.random() * 256;
+        do{
+          svg.append("line")
+              .attr("id", "mandala")
+              .attr("x1", pinPosXY[start][0])
+              .attr("y1", pinPosXY[start][1])
+              .attr("x2", pinPosXY[end][0])
+              .attr("y2", pinPosXY[end][1])
+              .attr("stroke-width", function(){ return lineSize + "px"; })
+              .attr("stroke", d3.rgb(r, g, b));
+          start = end;
+          end = start + step;
+          if(start >= pinPosXY.length) start -= pinPosXY.length;
+          if(end >= pinPosXY.length) end -= pinPosXY.length;
+        }while(start != 0);
+      }
+
+    }
+
     //曼荼羅を描画する/グラデーションモード
     function drawMandala_gradation(primeNumList, pinCount, type){
       var pinPosXY = calcPinsPos(pinCount);  //ピンの座標リスト
