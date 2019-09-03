@@ -36,10 +36,45 @@ __ファイルを落としてこなくても使えるようにしました__ => 
 __You can use this program without downloading files.__ => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken...  
 
-__1.曼荼羅のタイプを決める/Select type of mandala__ (Mandala Type)  
-曼荼羅の形やパターンを選ぶことができる。  
-You can select shape and pattern of the mandala.  
-* prime num
+__1.線のサイズを決める/Set line size__ (Line size)  
+基本的には1pxで問題ない。必要に応じて値を変えればいい。  
+Basically there is no problem with 1px.Change the value as needed.
+
+__2.ピンの数を決める/Set number of pins__ (Pin Count)  
+半角数字を入力して、ピンの数を決める。  
+Set number of pins by inputting single-byte alphanumeric characters.
+
+__3.曼荼羅のタイプを決める/Select type of mandala__ (Mandala Type)  
+曼荼羅のタイプやパターンはここで変えることができる。  
+Type and pattern of mandala can be changed.
+
+* prime num  
+ある素数だけ飛ばした位置のピンに糸をかけることで出来上がるパターン。選んでくる素数によって模様が変わる。prime numを選択するとすぐ下にチェックボックスが出現する。1つ1つは素数を表している。  
+A pattern created by threading a pin at a position where a certain prime number has been skipped.Pattern is changed by prime numbers you slect.If you select _prime num_, checkboxes appear just below.
+
+__4.配色を決める/Select color type__ (Color Type)  
+曼荼羅の配色を設定することができる。  
+You can set color of mandala.
+* mono  
+指定色のみで描画する。monoを選んだのち、すぐ下に色の入力欄が出現する。  
+Draw by only one color you set.After selecting _mono_, a color inout field appears jaust below.
+
+* gradation  
+こちらで用意したグラデーションパターンで描画する。2パターンあるので、どちらか選ぶ。  
+Draw by gradation pattern prepared. There are two pattern, choose either.
+
+* random  
+Createボタンを押すたびに色をランダムで変える。  
+Change the color randomly each time you press the _Create_ button.
+
+__5.アニメーション設定/Set animation type__ (Animation)  
+描画の際の演出を設定することができる。
+* none  
+演出なしで描画する
+
+__6.Createボタンを押す/Push *Create* button__ (Create)  
+1 ~ 5の設定を行ったうえでCreateボタンを押すことで曼荼羅が描画される。  
+The mandala is drawn by pushing the _Create_ button after setting 1 ~ 5.
 
 
 
