@@ -9,6 +9,7 @@
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
 
 ## 追記 Postscript  
+　__2019.9.4__　バージョン情報にver0.2.1を追加。使い方に追記。  
 　__2019.9.3__　バージョン情報にver0.2.0を追加。使い方を編集。  
 　__2019.9.1__　バージョン情報にver0.1.2を追加。使い方に追記。備考に追記。  
 　__2019.8.30__　バージョン情報にver0.1.1を追加。使い方に追記。  
@@ -70,7 +71,12 @@ Change the color randomly each time you press the _Create_ button.
 __5.アニメーション設定/Set animation type__ (Animation)  
 描画の際の演出を設定することができる。
 * none  
-演出なしで描画する
+演出なしで描画する。  
+Not animation.
+
+* magic circle  
+各ピンから一斉に線を引く。  
+Draw a line from each pin at once.
 
 __6.Createボタンを押す/Push *Create* button__ (Create)  
 1 ~ 5の設定を行ったうえでCreateボタンを押すことで曼荼羅が描画される。  
@@ -87,6 +93,10 @@ The mandala is drawn by pushing the _Create_ button after setting 1 ~ 5.
 The more pins you set, drawing process takes time.
 
 ## 5.バージョン情報 Version information  
+* __Ver0.2.1__ (2019.9.4)  
+アニメーションモードの「magic circle」を追加。  
+Added animation mode "_magic circle_".
+
 * __Ver0.2.0__ (2019.9.3)  
 今後の機能追加のために、プログラムを改修。一部UIの追加。機能としての変更点はなし。  
 Refurbishmented program for adding function, and added part of UI.No functional changes.
