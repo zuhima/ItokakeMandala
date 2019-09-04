@@ -81,7 +81,7 @@ SOFTWARE. -->
         Animation:
         <input type="radio" name="anime_type" id="anime_type_none" value="none" checked />none
         <input type="radio" name="anime_type" id="anime_type_magiccircle" value="magiccircle" />magic circle
-        <!-- <input type="radio" name="anime_type" id="anime_type_trace" value="trace"  />trace -->
+        <input type="radio" name="anime_type" id="anime_type_trace" value="trace"  />trace
       </div>
       <!-- 描画ボタン -->
       <div id="create_button_space">
@@ -222,6 +222,14 @@ SOFTWARE. -->
 
 
     //*****関数群*****
+    //遅延処理
+    function delay(){
+      setTimeout(function(){
+        console.log("pass");
+        return ;
+      }, 5001);
+    }
+
       //パラメータに応じて処理を振り分け
     function adaptFunction(mandalaType, colorType, animation, gradationType){
       switch(mandalaType){
@@ -236,6 +244,7 @@ SOFTWARE. -->
                   drawMandala_PrimenumMonoMagiccircle();
                 break;
                 case "trace":
+                  drawMandala_PrimenumMonoTrace();
                 break;
                 default:
                 break;
@@ -277,6 +286,48 @@ SOFTWARE. -->
         break;
         default:
         break;
+      }
+    }
+
+    //曼荼羅を描画
+    function drawMandala_PrimenumMonoTrace(){
+      var selectedPrimeNumList = [];
+      $("#prime_num_checkbox:checked").each(function(){
+        selectedPrimeNumList.push($(this).val());
+      })
+      if(selectedPrimeNumList.length == 0){
+        $("#create_button").prop("disabled", true);
+      } else {
+        var pinPosXY = calcPinsPos(pinCount);
+        putPins(pinPosXY);
+
+        //線の描画
+        for(var i = 0; i < selectedPrimeNumList.length; i++){
+          var step = Number(selectedPrimeNumList[i]);
+          var start = 0;
+          var end = step;
+          do{
+            svg.append("line")
+                .attr("id", "mandala")
+                .attr("x1", pinPosXY[start][0])
+                .attr("y1", pinPosXY[start][1])
+                .attr("x2", pinPosXY[start][0])
+                .attr("y2", pinPosXY[start][1])
+                .attr("stroke-width", function(){ return lineSize + "px"; })
+                .attr("stroke", "d3.rgba(0, 0, 0, 0)")
+                .transition()
+                .duration(500)
+                .attr("x2", pinPosXY[end][0])
+                .attr("y2", pinPosXY[end][1])
+                .attr("stroke", lineColor);
+
+            start = end;
+            end = start + step;
+            if(start >= pinPosXY.length) start -= pinPosXY.length;
+            if(end >= pinPosXY.length) end -= pinPosXY.length;
+
+          }while(start != 0);
+        }
       }
     }
 
