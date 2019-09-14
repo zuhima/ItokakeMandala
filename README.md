@@ -9,6 +9,7 @@
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
 
 ## 追記 Postscript  
+　__2019.9.14__　バージョン情報にver0.2.2を追加。使い方に追記。  
 　__2019.9.4__　バージョン情報にver0.2.1を追加。使い方に追記。  
 　__2019.9.3__　バージョン情報にver0.2.0を追加。使い方を編集。  
 　__2019.9.1__　バージョン情報にver0.1.2を追加。使い方に追記。備考に追記。  
@@ -37,15 +38,19 @@ __ファイルを落としてこなくても使えるようにしました__ => 
 __You can use this program without downloading files.__ => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken...  
 
-__1.線のサイズを決める/Set line size__ (Line size)  
+__1.描画範囲の設定/Set drawing size__ (Drawing Size)  
+数値を入力することで曼荼羅の描画範囲を設定することができる。  
+If you input numeric, drawing size of Mandala is set.
+
+__2.線のサイズを決める/Set line size__ (Line size)  
 基本的には1pxで問題ない。必要に応じて値を変えればいい。  
 Basically there is no problem with 1px.Change the value as needed.
 
-__2.ピンの数を決める/Set number of pins__ (Pin Count)  
+__3.ピンの数を決める/Set number of pins__ (Pin Count)  
 半角数字を入力して、ピンの数を決める。  
 Set number of pins by inputting single-byte alphanumeric characters.
 
-__3.曼荼羅のタイプを決める/Select type of mandala__ (Mandala Type)  
+__4.曼荼羅のタイプを決める/Select type of mandala__ (Mandala Type)  
 曼荼羅のタイプやパターンはここで変えることができる。  
 Type and pattern of mandala can be changed.
 
@@ -53,7 +58,14 @@ Type and pattern of mandala can be changed.
 ある素数だけ飛ばした位置のピンに糸をかけることで出来上がるパターン。選んでくる素数によって模様が変わる。prime numを選択するとすぐ下にチェックボックスが出現する。1つ1つは素数を表している。  
 A pattern created by threading a pin at a position where a certain prime number has been skipped.Pattern is changed by prime numbers you slect.If you select _prime num_, checkboxes appear just below.
 
-__4.配色を決める/Select color type__ (Color Type)  
+* flower  
+花模様の曼荼羅を描画する。選択するとUIが変化し、petal,step1,step2の入力欄が現れる。いずれも数値を入力する。  
+The mandala of flower pattern is drawn.If you select _flower_, UI changes and input fields of _petal_, _step1_, _step2_ arpear.Each input field input numeric.
+  - petal：花びらの枚数 / Number of petal
+  - step1：線の始点の移動ペース / Move pace of line's start point
+  - step2：線の終点の移動ペース / Move pace of line's end point
+
+__5.配色を決める/Select color type__ (Color Type)  
 曼荼羅の配色を設定することができる。  
 You can set color of mandala.
 * mono  
@@ -68,7 +80,7 @@ Draw by gradation pattern prepared. There are two pattern, choose either.
 Createボタンを押すたびに色をランダムで変える。  
 Change the color randomly each time you press the _Create_ button.
 
-__5.アニメーション設定/Set animation type__ (Animation)  
+__6.アニメーション設定/Set animation type__ (Animation)  
 描画の際の演出を設定することができる。
 * none  
 演出なしで描画する。  
@@ -78,7 +90,7 @@ Not animation.
 各ピンから一斉に線を引く。  
 Draw a line from each pin at once.
 
-__6.Createボタンを押す/Push *Create* button__ (Create)  
+__7.Createボタンを押す/Push *Create* button__ (Create)  
 1 ~ 5の設定を行ったうえでCreateボタンを押すことで曼荼羅が描画される。  
 The mandala is drawn by pushing the _Create_ button after setting 1 ~ 5.
 
@@ -93,6 +105,10 @@ The mandala is drawn by pushing the _Create_ button after setting 1 ~ 5.
 The more pins you set, drawing process takes time.
 
 ## 5.バージョン情報 Version information  
+* __Ver0.2.2__ (2019.9.14)  
+描画範囲の設定機能の追加。花模様曼荼羅の描画タイプ(単色,ノンアニメーション)を追加。  
+Added function that drawing size set.And added mandala of flower pattren.(only mono color, non animation)
+
 * __Ver0.2.1__ (2019.9.4)  
 アニメーションモードの「magic circle」を追加。  
 Added animation mode "_magic circle_".
@@ -129,7 +145,7 @@ Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
 * 線の色付け(~グラデーション、ランダム~、カスタム) / Line coloring(~gradation,random,~custom)  
 * UI周りの改良 / UI improvements  
 * 角型曼荼羅の実装 / Implementation of square mandala  
-* 素数パターン以外の曼荼羅描画(花,鳥...) / Drawing mandara other than prime numbers(flower, bird...)  
+* 素数パターン以外の曼荼羅描画(~花~,鳥...) / Drawing mandara other than prime numbers(~flower~, bird...)  
 * アニメーション設定 / Animation settings  
 　　　　　　　　　　　　　　　　...etc
 
