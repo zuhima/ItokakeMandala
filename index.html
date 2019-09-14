@@ -144,7 +144,7 @@ SOFTWARE. -->
         break;
         case "flower":
           $("#add_space").append(
-          '<div id="petal_space">Petal :<input type="text" id="petal" size="3" /></div><div id="step1_space">Step1:<input type="text" id="step1" size="3" /></div><div id="step2_space">Step2:<input type="text" id="step2" size="3" /></div>'
+          '<div id="petal_space">Petal :<input type="text" id="petal" size="3" /><font size="2"><=Input so that "PinCount/Petal" is divisible.</font></div><div id="step1_space">Step1:<input type="text" id="step1" size="3" /></div><div id="step2_space">Step2:<input type="text" id="step2" size="3" /></div>'
           )
         break;
         default:
@@ -164,7 +164,7 @@ SOFTWARE. -->
         $("#create_button").prop("disabled", true);
         return;
       }
-      if(petal <= 0){
+      if(petal <= 0 || petal > pinCount){
         $("#create_button").prop("disabled", true);
         return;
       }
@@ -189,7 +189,7 @@ SOFTWARE. -->
     })
 
     //step2欄が変化した時
-    $(document).on("change", "#step1", function(){
+    $(document).on("change", "#step2", function(){
       var val = $(this).val();
       if(!isNaN(val)){
         //数値が入力されたとき
@@ -367,6 +367,12 @@ SOFTWARE. -->
 
     //曼荼羅を描画
     function drawMandala_FlowerMonoNone(){
+      if(pinCount % petal != 0){
+        $("#create_button").prop("disabled", true);
+        return;
+      }
+
+      //ピンの配置
       var pinPosXY = calcPinsPos(pinCount);
       putPins(pinPosXY);
 
@@ -383,7 +389,7 @@ SOFTWARE. -->
               .attr("y1", pinPosXY[start][1])
               .attr("x2", pinPosXY[end][0])
               .attr("y2", pinPosXY[end][1])
-              .attr("stroke", "black")
+              .attr("stroke", lineColor)
               .attr("stroke-width", function(){ return lineSize + "px"; });
           start += step_start;
           end += step_end;
