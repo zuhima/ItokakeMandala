@@ -42,6 +42,10 @@ SOFTWARE. -->
     </div>
     <!-- UIスペース -->
     <div id="ui">
+      <!-- 描画範囲設定 -->
+      <div id="drawing_size_space">
+        Drawing Size:<input type="text" id="drawing_size" size="3" /><span id="size_result"><font size="2"> =>500x500</font></span>
+      </div>
       <!-- LineSize設定 -->
       <div id="line_size_space">
         Line size:<input type="text" id="line_size" size="3" />px
@@ -81,7 +85,7 @@ SOFTWARE. -->
         Animation:
         <input type="radio" name="anime_type" id="anime_type_none" value="none" checked />none
         <input type="radio" name="anime_type" id="anime_type_magiccircle" value="magiccircle" />magic circle
-        <input type="radio" name="anime_type" id="anime_type_trace" value="trace"  />trace
+        <!-- <input type="radio" name="anime_type" id="anime_type_trace" value="trace"  />trace -->
       </div>
       <!-- 描画ボタン -->
       <div id="create_button_space">
@@ -116,6 +120,34 @@ SOFTWARE. -->
 
     //Line sizeにデフォルトの線の太さを入力
     $("#line_size").val("1");
+
+    //DrawingSizeの初期値を入力しておく
+    $("#drawing_size").val("500");
+
+    //DrawingSizeが変化したら
+    $(document).on("change", "#drawing_size", function(){
+      var val = $(this).val();
+      if(!isNaN(val)){
+        //数値が入力されたとき
+        width = Number(val);
+        height = Number(val);
+        centerX = width / 2;
+        centerY = height / 2;
+        radius = centerX * 9/10;
+        $("#size_result").text("");
+        $("#size_result").append(
+          '<font size="2"> =>' + width + 'x' + height + '</font>'
+        )
+
+        $("#mandala_space").text("");
+        svg = d3.select("#mandala_space").append("svg")
+                .attr("width", width)
+                .attr("height", height);   //描画スペース設定
+      } else {
+        return;
+      }
+
+    })
 
     //Line sizeが変化したとき
     $("#line_size").change(function(){
