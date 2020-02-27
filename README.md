@@ -150,7 +150,7 @@ Change tag around UI from "p" to "div". Also serves as branch test for GitHub.
 　　　　　　　　　　　　　　　　...etc
 
 ## 7.著者 Author  
-__zuhima__ => [github](https://github.com/zuhima), [twitter](https://twitter.com/hmjnzsm0922/)  
+__zuhima__ => [github](https://github.com/zuhima)
 　最近(2019/8~)プログラムの公開みたいなことを始めました。よかったらフォローしてください、よろしくお願いします。  
  Recentry, I started to publish my program.Please follow me.
 
