@@ -5,10 +5,11 @@
 
 ※I'm not good at English...Please forgive my poor English.
 
-## 本プログラムは[こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から！/This program can be used [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
+## 本プログラムは[こちら](https://zuhima.github.io/ItokakeMandala/)から！/This program can be used [HERE](https://zuhima.github.io/ItokakeMandala/)!  
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken
 
 ## 追記 Postscript  
+　__2020.4.4__　GitHub Pagesにて公開，リンクの更新  
 　__2019.9.14__　バージョン情報にver0.2.2を追加。使い方に追記。  
 　__2019.9.4__　バージョン情報にver0.2.1を追加。使い方に追記。  
 　__2019.9.3__　バージョン情報にver0.2.0を追加。使い方を編集。  
@@ -34,8 +35,8 @@ Ver0.1.0
 
 
 ## 3.使い方　Usage
-__ファイルを落としてこなくても使えるようにしました__ => [こちら](https://myprogramserver.mybluemix.net/ItokakeMandala)から  
-__You can use this program without downloading files.__ => [HERE](https://myprogramserver.mybluemix.net/ItokakeMandala)!  
+__ファイルを落としてこなくても使えるようにしました__ => [こちら](https://zuhima.github.io/ItokakeMandala/)から  
+__You can use this program without downloading files.__ => [HERE](https://zuhima.github.io/ItokakeMandala/)!  
 ※リンクが切れていたら申し訳ありません。/Sorry if the link is broken...  
 
 __1.描画範囲の設定/Set drawing size__ (Drawing Size)  
